@@ -14,7 +14,8 @@ async function getQuote(){
 
     try{ 
         
-        var response = await fetch("http://quotes.rest/quote/search.json?author=C.S.%20Lewis&api_key=CpJr7t9MJ03F_ONxy_b6UgeF",{cache: "reload"});
+        var urlAndKey = "http://quotes.rest/quote/search.json?author=C.S.%20Lewis&api_key=" + encodeURIComponent("CpJr7t9MJ03F_ONxy_b6UgeF");
+        var response = await fetch(urlAndKey,{cache: "reload"});
         var data = await response.json();
         
         console.log(data); 
